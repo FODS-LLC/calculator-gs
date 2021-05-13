@@ -108,13 +108,13 @@ function validateEmailSimple(email) {
 function showEmailConfirm(email) {
   const emailConfirm = document.getElementById('email-confirm');
   emailConfirm.innerText = ('Sending email to ' + email);
-  emailConfirm.classList.remove('invisible');
-  emailConfirm.classList.add('visible');
+  const emailToggle = document.getElementById('email-confirm-toggle');
+  emailToggle.classList.remove('hidden');
+
 }
 function hideEmailConfirm() {
-  const emailConfirm = document.getElementById('email-confirm');
-  emailConfirm.classList.remove('visible');
-  emailConfirm.classList.add('invisible');
+  const emailToggle = document.getElementById('email-confirm-toggle');
+  emailToggle.classList.add('hidden');
 }
 
 var id = new URLSearchParams(window.location.search).get('id');
