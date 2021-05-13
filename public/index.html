@@ -82,7 +82,7 @@
               <div class="">
                 <div class="px-4 py-5">
                   <h3 name="form-title" class="text-lg font-medium leading-6 text-gray-900">Please enter your construction entrance costs to calculator your ROI.</h3>
-                  <p class="block text-sm font-medium text-gray-700">Or leave the default values from a civil project in Denver.</p>
+                  <p class="block text-sm font-medium text-gray-700">Default values based on national averages.</p>
                 </div>
                 <!--- Length Radio Buttons full width -->
                 <div class="px-4 py-5 bg-white space-y-6 sm:p-6">
@@ -148,13 +148,13 @@
                             </label>
                           </div>
                           <div class="flex items-center">
-                            <input id="refresh-frequency-bimonthly" value="bimonthly" checked="checked" name="refresh_frequency" type="radio" class="focus:ring-indigo-500 h-4 w-4 text-indigo-600 border-gray-300">
+                            <input id="refresh-frequency-bimonthly" value="bimonthly" name="refresh_frequency" type="radio" class="focus:ring-indigo-500 h-4 w-4 text-indigo-600 border-gray-300">
                             <label for="refresh-frequency-bimonthly" class="ml-3 block text-sm font-medium text-gray-700">
                               Bi-Monthly
                             </label>
                           </div>
                           <div class="flex items-center">
-                            <input id="refresh-frequency-monthly" value="monthly" name="refresh_frequency" type="radio" class="focus:ring-indigo-500 h-4 w-4 text-indigo-600 border-gray-300">
+                            <input id="refresh-frequency-monthly" value="monthly" checked="checked" name="refresh_frequency" type="radio" class="focus:ring-indigo-500 h-4 w-4 text-indigo-600 border-gray-300">
                             <label for="refresh-frequency-monthly" class="ml-3 block text-sm font-medium text-gray-700">
                               Monthly
                             </label>
@@ -183,7 +183,7 @@
                         Installation Cost
                       </label>
                       <div class="mt-1 flex rounded-md shadow-sm">
-                        <input type="text" name="installation_cost" id="installation-cost" placeholder="eg. $2,000" value="2000" class="p-1 pl-2 focus:ring-indigo-500 focus:border-indigo-500 flex-1 block w-full rounded-none rounded-l-md sm:text-sm border border-gray-300">
+                        <input type="text" name="installation_cost" id="installation-cost" placeholder="eg. $3,500" value="3500" class="p-1 pl-2 focus:ring-indigo-500 focus:border-indigo-500 flex-1 block w-full rounded-none rounded-l-md sm:text-sm border border-gray-300">
                         <span class="align-center min-w-max w-label max-w-label inline-flex justify-center items-center px-3 rounded-r-md border border-l-0 border-gray-300 bg-gray-50 text-gray-500 text-sm">
                           per install
                         </span>
@@ -196,7 +196,7 @@
                         Refresh Cost
                       </label>
                       <div class="mt-1 flex rounded-md shadow-sm">
-                        <input type="text" name="refresh_cost" id="refresh-cost"  placeholder="eg. $800" value="800" class="p-1 pl-2 focus:ring-indigo-500 focus:border-indigo-500 flex-1 block w-full rounded-none rounded-l-md sm:text-sm border border-gray-300">
+                        <input type="text" name="refresh_cost" id="refresh-cost"  placeholder="eg. $650" value="650" class="p-1 pl-2 focus:ring-indigo-500 focus:border-indigo-500 flex-1 block w-full rounded-none rounded-l-md sm:text-sm border border-gray-300">
                         <span class="align-center min-w-max w-label max-w-label inline-flex justify-center items-center px-3 rounded-r-md border border-l-0 border-gray-300 bg-gray-50 text-gray-500 text-sm">
                           per refresh
                         </span>
@@ -222,7 +222,7 @@
                         Remediation Cost
                       </label>
                       <div class="mt-1 flex rounded-md shadow-sm">
-                        <input type="text" name="remediation_cost" id="remidiation-cost" placeholder="eg. $1,000" value="1000" class="p-1 pl-2 focus:ring-indigo-500 focus:border-indigo-500 flex-1 block w-full rounded-none rounded-l-md sm:text-sm border border-gray-300">
+                        <input type="text" name="remediation_cost" id="remidiation-cost" placeholder="eg. $750" value="750" class="p-1 pl-2 focus:ring-indigo-500 focus:border-indigo-500 flex-1 block w-full rounded-none rounded-l-md sm:text-sm border border-gray-300">
                         <span class="align-center min-w-max w-label max-w-label inline-flex justify-center items-center px-3 rounded-r-md border border-l-0 border-gray-300 bg-gray-50 text-gray-500 text-sm">
                           per removal
                         </span>
@@ -235,7 +235,7 @@
                         Avg. Project Length
                       </label>
                       <div class="mt-1 flex rounded-md shadow-sm">
-                        <input type="text" name="project_length" id="project-length"  placeholder="eg. 8" value="8" class="p-1 pl-2 focus:ring-indigo-500 focus:border-indigo-500 flex-1 block w-full rounded-none rounded-l-md sm:text-sm border border-gray-300">
+                        <input type="text" name="project_length" id="project-length"  placeholder="eg. 12" value="12" class="p-1 pl-2 focus:ring-indigo-500 focus:border-indigo-500 flex-1 block w-full rounded-none rounded-l-md sm:text-sm border border-gray-300">
                         <span class="align-center min-w-max w-label max-w-label inline-flex justify-center items-center px-3 rounded-r-md border border-l-0 border-gray-300 bg-gray-50 text-gray-500 text-sm">
                           months
                         </span>
@@ -251,7 +251,7 @@
                     Email Address
                   </label>
                   <div class="mt-1 flex rounded-md shadow-sm">
-                    <input type="text" name="email_address" id="emailAddress" placeholder="dschrute@dundermifflen.com" value="" class="w-1 z-10 flex-grow p-1 pl-2 py-2 focus:ring-indigo-500 focus:border-indigo-500 block rounded-none rounded-l-md sm:text-sm border border-gray-300">
+                    <input type="text" name="email_address" id="emailAddress" placeholder="eg. dschrute@dundermifflen.com" value="" class="w-1 z-10 flex-grow p-1 pl-2 py-2 focus:ring-indigo-500 focus:border-indigo-500 block rounded-none rounded-l-md sm:text-sm border border-gray-300">
                     <input type="text" style="position:fixed;bottom:0px;left:0px;pointer-events:none;opacity:0.00000001" autocomplete="off" name="hp_emailaddress" id="hp_emailAddress" placeholder="dschrute@dundermifflen.com" value="dschrute@dundermifflen.com" class="flex-grow p-1 pl-2 py-2 focus:ring-indigo-500 focus:border-indigo-500 block rounded-none rounded-l-md sm:text-sm border border-gray-300">
                     <a href="#" id="form-submit-btn" style="background-color:#f8d146;" class="min-w-max justify-center py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-r-md hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
                       Get Results

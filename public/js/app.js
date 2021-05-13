@@ -132,9 +132,9 @@ async function getPrev() {
 
 // Start Get Prev
 function loadPrev() {
-    console.log('calling getPrev')
+    // console.log('calling getPrev')
     getPrev().then((res) => {
-      console.log('calling calculate')
+      // console.log('calling calculate')
       calculate(id, false, res)
     })
 }
@@ -146,7 +146,7 @@ window.onload = function() {
   // If looking at previous calculation
   if (id) {
   // Get previous calculation
-  console.log('calling loadPrev')
+  // console.log('calling loadPrev')
     loadPrev()
   }
 
@@ -198,7 +198,7 @@ window.onload = function() {
     // console.log(formObject)
     if (formObject.hp_emailaddress == 'dschrute@dundermifflen.com') {
       if (validateEmail(formObject.email_address)) {
-        console.log(formObject.email_address)
+        //console.log(formObject.email_address)
         
       
         // Add calculation to sheet
@@ -242,7 +242,6 @@ window.onload = function() {
       method: 'POST',
       body: new FormData(calculatorSubmit)
     })
-        .then((res) => console.log(res))
         .then((res) => res.json());
         //.then(log)
         //.then(console.log(log))
@@ -319,15 +318,14 @@ function calculate(guid, isNew, prevData={}) {
   var refresh_frequency = 2;
   var fodsCost;
 
-  console.log('Calculating')
+  // console.log('Calculating')
   goToResults();
   pushState({}, 'Calculation Results', `./?id=${guid}`);
   if (isNew == true) {
     var data = getData();
-    console.log('new Data')
+    // console.log('new Data')
   } else {
-    console.log('prev Data')
-    console.log(data)
+    // console.log('prev Data')
     var data = {
       'entrance_length': prevData["Entrance Length"],
       'installation_cost': prevData["Installation Cost"],
@@ -343,12 +341,16 @@ function calculate(guid, isNew, prevData={}) {
   switch (data.entrance_length) {
     case '35':
       fodsCost = 10400;
+      break
     case '50':
-      fodsCost = 13000;
+      fodsCost = 15600;
+      break
     case '70':
-      fodsCost = 13000;
+      fodsCost = 15600;
+      break
     case '100':
       fodsCost = 20800; 
+      break
   }
   switch (data.refresh_frequency) {
     case 'weekly':
@@ -367,7 +369,6 @@ function calculate(guid, isNew, prevData={}) {
 
   
   
-  
   var totalRefreshCost = data.refresh_cost * refresh_frequency * data.project_length;
   
   //console.log('data.entrance_length: ' + data.entrance_length);
@@ -381,7 +382,7 @@ function calculate(guid, isNew, prevData={}) {
   
   //console.log("totalRefreshCost: " + totalRefreshCost);
   var rockCost = parseInt(data.installation_cost) + parseInt(data.removal_cost) + parseInt(data.remediation_cost) + parseFloat(totalRefreshCost);
-  //console.log("rockCost: " + rockCost);
+  // console.log("rockCost: " + rockCost);
   if (data.project_length > 0) {
     var monthlyRockCost = rockCost/data.project_length;
   } else {
