@@ -1,0 +1,17 @@
+@tailwind base;
+
+@tailwind components;
+
+@tailwind utilities;
+
+.bg-error {
+    /*background-color: #ffdbdb;*/
+    box-shadow: var(--tw-ring-inset) 0 0 0 calc(2px + var(--tw-ring-offset-width)) #ff6161;
+}
+
+.invisible {
+    visibility: hidden;
+}
+.visible {
+    visibility: visible;
+}

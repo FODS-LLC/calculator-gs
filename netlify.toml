@@ -1,0 +1,21 @@
+[build]
+  framework = "#custom"
+  command = "npm run development" # Command to start your dev server
+  targetPort = 6000 # The port that the netlify dev will be accessible on
+  port = 5000
+  publish = "public/" # If you use a _redirect file, provide the path to your static content folder
+  functions = "./functions"
+[context.production]
+  framework = "#custom"
+  command = "npm run production" # Command to start your dev server
+  publish = "public" # If you use a _redirect file, provide the path to your static content folder
+  functions = "./functions"
+  base = "/"
+[context.dev]
+  framework = "#custom"
+  command = "npm run serve" # Command to start your dev server
+  publish = "public" # If you use a _redirect file, provide the path to your static content folder
+  targetPort = 6000 # The port that the netlify dev will be accessible on
+  port = 5000
+  functions = "./functions"
+  base = "/"
