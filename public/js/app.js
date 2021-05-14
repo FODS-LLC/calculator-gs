@@ -19,10 +19,14 @@ function removeActiveLen() {
 }
 
 // Update Picture and select length
+var imageURL = 'img/1x5T.jpg';
+var imageTITLE = '1x5T';
 function len35(event) {
   event.preventDefault();
   document.getElementById('layout').setAttribute('src', 'img/1x4.jpg');
   document.getElementById('layout-name').innerText = '1x4';
+  imageURL = 'img/1x4.jpg';
+  imageTITLE = '1x4';
   document.getElementById('entrance-length-35').click();
   removeActiveLen();
   document.getElementById('length-35').classList.add('bg-fodsYellow');
@@ -32,6 +36,8 @@ function len50(event) {
   document.getElementById('layout').setAttribute('src', 'img/1x5T.jpg');
   document.getElementById('layout-name').innerText = '1x5T';
   document.getElementById('entrance-length-50').click();
+  imageURL = 'img/1x5T.jpg';
+  imageTITLE = '1x5T';
   removeActiveLen();
   document.getElementById('length-50').classList.add('bg-fodsYellow');
 }
@@ -39,6 +45,8 @@ function len70(event) {
   event.preventDefault();
   document.getElementById('layout').setAttribute('src', 'img/1x5T.jpg');
   document.getElementById('layout-name').innerText = '1x5T';
+  imageURL = 'img/1x5T.jpg';
+  imageTITLE = '1x5T';
   document.getElementById('entrance-length-70').click();
   removeActiveLen();
   document.getElementById('length-70').classList.add('bg-fodsYellow');
@@ -47,6 +55,8 @@ function len100(event) {
   event.preventDefault();
   document.getElementById('layout').setAttribute('src', 'img/1x7T.jpg');
   document.getElementById('layout-name').innerText = '1x7T';
+  imageURL = 'img/1x7T.jpg';
+  imageTITLE = '1x7T';
   document.getElementById('entrance-length-100').click();
   removeActiveLen()
   document.getElementById('length-100').classList.add('bg-fodsYellow');
@@ -317,6 +327,7 @@ function updateTables(calculatedData) {
 function calculate(guid, isNew, prevData={}) {
   var refresh_frequency = 2;
   var fodsCost;
+  var imgURL;
 
   // console.log('Calculating')
   goToResults();
@@ -338,18 +349,25 @@ function calculate(guid, isNew, prevData={}) {
     }
   }
 
+
+
   switch (data.entrance_length) {
     case '35':
       fodsCost = 10400;
+      imageURL = 'img/1x4.jpg';
+      
       break
     case '50':
       fodsCost = 15600;
+      imageURL = 'img/1x5T.jpg';
       break
     case '70':
       fodsCost = 15600;
+      imageURL = 'img/1x5T.jpg';
       break
     case '100':
       fodsCost = 20800; 
+      imageURL = 'img/1x7T.jpg';
       break
   }
   switch (data.refresh_frequency) {
@@ -419,6 +437,8 @@ function calculate(guid, isNew, prevData={}) {
   
 
   var calculatedData = {
+    'imageURL': imageURL,
+    'imageTITLE': imageTITLE,
     'email_address': data.email_address,
     'roi': Math.round(fodsROI),
     'savings3yr': savings3yr,

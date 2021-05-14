@@ -29,6 +29,9 @@ throw new Error('no region env var set');
     let roi = requestParams.roi
     let email = requestParams.email_address
 
+    let imageURL = requestParams.imageURL
+    let imageTITLE = requestParams.imageTITLE
+
     let savings3yr = requestParams.savings3yr
     let savings5yr = requestParams.savings5yr
     let savings10yr = requestParams.savings10yr
@@ -45,8 +48,10 @@ throw new Error('no region env var set');
     let savings_10_3yr = requestParams.savings_10_3yr
     let savings_10_5yr = requestParams.savings_10_5yr
     let savings_10_10yr = requestParams.savings_10_10yr
-
+    
     let data = {
+      'imageURL': imageURL,
+      'imageTITLE': imageTITLE,
       "roi": roi,
       'savings3yr': savings3yr,
       'savings5yr': savings5yr,
@@ -97,7 +102,7 @@ throw new Error('no region env var set');
           },
           Subject: {
             Charset: "UTF-8",
-            Data: "From Contact Form"
+            Data: "FODS ROI Calculator"
           }
         },
         Source: "info@getfods.com"
@@ -124,6 +129,8 @@ function makeTemplates(parsedData) {
   var currentData = parsedData
   var emailTemplates = [];
   var data = {
+    'imageURL':currentData.imageURL,
+    'imageTITLE':currentData.imageTITLE,
     'roi': currentData.roi,
     'savings3yr': Intl.NumberFormat('en-US').format(currentData.savings3yr),
     'savings5yr': Intl.NumberFormat('en-US').format(currentData.savings5yr),
@@ -518,7 +525,7 @@ function makeTemplates(parsedData) {
                                       <tbody>
                                         <tr>
                                           <td style="width: 150px;" width="150">
-                                            <img height="auto" src="http://calculator.getfods.com/img/1x5T.jpg" style="border: 0; display: block; outline: none; text-decoration: none; height: auto; width: 100%; font-size: 13px;" width="150">
+                                            <img height="auto" src="http://calculator.getfods.com/${data.imageURL}" style="border: 0; display: block; outline: none; text-decoration: none; height: auto; width: 100%; font-size: 13px;" width="150">
                                           </td>
                                         </tr>
                                       </tbody>
@@ -527,7 +534,7 @@ function makeTemplates(parsedData) {
                                 </tr>
                                 <tr>
                                   <td align="center" style="font-size: 0px; padding: 10px 25px; padding-top: 0px; word-break: break-word;">
-                                    <div style="font-family: Ubuntu, Helvetica, Arial, sans-serif; font-size: 13px; line-height: 1; text-align: center; color: #000000;"><span id="layout" class="padding yellow text-space center rounded max-content" style="background-color: #f8d146; width: max-content; margin: auto; padding: 2px 6px; border-radius: 6px;">1x5T</span></div>
+                                    <div style="font-family: Ubuntu, Helvetica, Arial, sans-serif; font-size: 13px; line-height: 1; text-align: center; color: #000000;"><span id="layout" class="padding yellow text-space center rounded max-content" style="background-color: #f8d146; width: max-content; margin: auto; padding: 2px 6px; border-radius: 6px;">${data.imageTITLE}</span></div>
                                   </td>
                                 </tr>
                               </table>
