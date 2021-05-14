@@ -31,6 +31,7 @@ throw new Error('no region env var set');
 
     let imageURL = requestParams.imageURL
     let imageTITLE = requestParams.imageTITLE
+    let ReplacementLength = requestParams.ReplacementLength
 
     let savings3yr = requestParams.savings3yr
     let savings5yr = requestParams.savings5yr
@@ -132,6 +133,7 @@ function makeTemplates(parsedData) {
     'imageURL':currentData.imageURL,
     'imageTITLE':currentData.imageTITLE,
     'roi': currentData.roi,
+    'ReplacementLength': currentData.ReplacementLength,
     'savings3yr': Intl.NumberFormat('en-US').format(currentData.savings3yr),
     'savings5yr': Intl.NumberFormat('en-US').format(currentData.savings5yr),
     'savings10yr': Intl.NumberFormat('en-US').format(currentData.savings10yr),
@@ -488,7 +490,7 @@ function makeTemplates(parsedData) {
                                 <tr>
                                   <td align="left" style="font-size: 0px; padding: 10px 25px; word-break: break-word;">
                                     <div style="font-family: Ubuntu, Helvetica, Arial, sans-serif; font-size: 13px; line-height: 1; text-align: left; color: #000000;">
-                                      <mj-text> Recomended Alternative FODS Layout is the <span class="padding yellow text-space center rounded" style="background-color: #f8d146; margin: auto; padding: 2px 6px; display: inline-block; border-radius: 6px;"> 1x5T. </span>
+                                      <mj-text> Recomended Alternative FODS Layout is the <span class="padding yellow text-space center rounded" style="background-color: #f8d146; margin: auto; padding: 2px 6px; display: inline-block; border-radius: 6px;"> ${data.imageTITLE}. </span>
                                       </mj-text>
                                     </div>
                                   </td>
@@ -500,7 +502,7 @@ function makeTemplates(parsedData) {
                                 </tr>
                                 <tr>
                                   <td align="left" style="font-size: 0px; padding: 10px 25px; word-break: break-word;">
-                                    <div style="font-family: Ubuntu, Helvetica, Arial, sans-serif; font-size: 13px; line-height: 1; text-align: left; color: #000000;">This layout is commonly used to replace a rock entrance up to x feet.</div>
+                                    <div style="font-family: Ubuntu, Helvetica, Arial, sans-serif; font-size: 13px; line-height: 1; text-align: left; color: #000000;">This layout is commonly used to replace a rock entrance up to ${data.ReplacementLength} feet.</div>
                                   </td>
                                 </tr>
                                 <tr>
