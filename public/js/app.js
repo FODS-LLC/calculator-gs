@@ -359,22 +359,26 @@ function calculate(guid, isNew, prevData={}) {
   switch (data.entrance_length) {
     case '35':
       fodsCost = 10400;
+      imageTITLE = '1x4';
       imageURL = 'img/1x4.jpg';
       ReplacementLength = '50';
       break
     case '50':
       fodsCost = 15600;
-      imageURL = 'img/1x5T.jpg';
+      imageURL = '1x5T';
+      imageURL = 'img/1x4.jpg';
       ReplacementLength = '70';
       break
     case '70':
       fodsCost = 15600;
-      imageURL = 'img/1x5T.jpg';
+      imageURL = '1x5T';
+      imageURL = 'img/1x4.jpg';
       ReplacementLength = '70';
       break
     case '100':
       fodsCost = 20800; 
-      imageURL = 'img/1x7T.jpg';
+      imageURL = '1x7T';
+      imageURL = 'img/1x4.jpg';
       ReplacementLength = '100';
       break
   }
@@ -445,9 +449,9 @@ function calculate(guid, isNew, prevData={}) {
   
 
   var calculatedData = {
-    'imageURL': imageURL,
-    'imageTITLE': imageTITLE,
-    'ReplacementLength': ReplacementLength,
+    'imageURL': data.imageURL,
+    'imageTITLE': data.imageTITLE,
+    'ReplacementLength': data.ReplacementLength,
     'email_address': data.email_address,
     'roi': Math.round(fodsROI),
     'savings3yr': savings3yr,
