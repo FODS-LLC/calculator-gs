@@ -389,7 +389,7 @@ function makeTemplates(parsedData) {
                                         <tr>
                                           <td style="width: 100px;" width="100">
                                             <a href="https://getfods.com/" target="_blank">
-                                              <img height="auto" src="https://dev-calc-gs2.netlify.app/img/logo.png" style="border: 0; display: block; outline: none; text-decoration: none; height: auto; width: 100%; font-size: 13px;" width="100">
+                                              <img height="auto" src="https://calculator.getfods.com/img/logo.png" style="border: 0; display: block; outline: none; text-decoration: none; height: auto; width: 100%; font-size: 13px;" width="100">
                                             </a>
                                           </td>
                                         </tr>
@@ -518,7 +518,7 @@ function makeTemplates(parsedData) {
                                       <tbody>
                                         <tr>
                                           <td style="width: 150px;" width="150">
-                                            <img height="auto" src="http://dev-calc-gs2.netlify.app/img/1x5T.jpg" style="border: 0; display: block; outline: none; text-decoration: none; height: auto; width: 100%; font-size: 13px;" width="150">
+                                            <img height="auto" src="http://calculator.getfods.com/img/1x5T.jpg" style="border: 0; display: block; outline: none; text-decoration: none; height: auto; width: 100%; font-size: 13px;" width="150">
                                           </td>
                                         </tr>
                                       </tbody>
@@ -814,7 +814,7 @@ function makeTemplates(parsedData) {
                                         <tr>
                                           <td style="width: 100px;" width="100">
                                             <a href="https://getfods.com/" target="_blank">
-                                              <img height="auto" src="https://dev-calc-gs2.netlify.app/img/logo.png" style="border: 0; display: block; outline: none; text-decoration: none; height: auto; width: 100%; font-size: 13px;" width="100">
+                                              <img height="auto" src="https://calculator.getfods.com/img/logo.png" style="border: 0; display: block; outline: none; text-decoration: none; height: auto; width: 100%; font-size: 13px;" width="100">
                                             </a>
                                           </td>
                                         </tr>
