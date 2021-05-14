@@ -449,9 +449,9 @@ function calculate(guid, isNew, prevData={}) {
   
 
   var calculatedData = {
-    'imageURL': data.imageURL,
-    'imageTITLE': data.imageTITLE,
-    'ReplacementLength': data.ReplacementLength,
+    'imageURL': imageURL,
+    'imageTITLE': imageTITLE,
+    'ReplacementLength': ReplacementLength,
     'email_address': data.email_address,
     'roi': Math.round(fodsROI),
     'savings3yr': savings3yr,
