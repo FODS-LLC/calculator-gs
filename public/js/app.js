@@ -382,6 +382,7 @@ function calculate(guid, isNew, prevData={}) {
       ReplacementLength = '100';
       break
   }
+
   switch (data.refresh_frequency) {
     case 'weekly':
       refresh_frequency = 4;

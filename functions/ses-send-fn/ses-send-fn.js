@@ -51,6 +51,7 @@ throw new Error('no region env var set');
     let savings_10_10yr = requestParams.savings_10_10yr
     
     let data = {
+      'ReplacementLength': ReplacementLength,
       'imageURL': imageURL,
       'imageTITLE': imageTITLE,
       "roi": roi,
