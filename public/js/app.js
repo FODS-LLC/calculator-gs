@@ -211,7 +211,7 @@ window.onload = function() {
 
 
     // console.log(formObject)
-    if (formObject.hp_emailaddress == 'dschrute@dundermifflen.com') {
+    if (formObject.hp_emailaddress == 'dschrute@dundermifflin.com') {
       if (validateEmail(formObject.email_address)) {
         //console.log(formObject.email_address)
         
