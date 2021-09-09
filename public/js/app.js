@@ -154,6 +154,51 @@ function loadPrev() {
     })
 }
 
+errors = [];
+fields = [
+  document.getElementById('installation-cost'),
+  document.getElementById('refresh-cost'),
+  document.getElementById('removal-cost'),
+  document.getElementById('remidiation-cost'),
+  document.getElementById('project-length')
+  ];
+
+  
+
+function checkField(field) {
+
+  if (isNaN(parseInt(field.value))) {
+    field.classList.add("bg-error")
+    errors.push(field)
+    return false
+  } else if (!isNaN(parseInt(field.value))) {
+    if (field.classList.contains("bg-error")) {
+      field.classList.remove("bg-error")
+      return true
+    }
+  }
+
+}
+
+function validateFields() {
+  fields = [
+    document.getElementById('installation-cost'),
+    document.getElementById('refresh-cost'),
+    document.getElementById('removal-cost'),
+    document.getElementById('remidiation-cost'),
+    document.getElementById('project-length')
+    ];
+    errors = [];
+    fields.forEach(checkField);
+    if (errors.length == 0) {
+      return true
+    } else {
+      return false
+    }
+
+}
+
+
 
 window.onload = function() {
 
@@ -212,7 +257,7 @@ window.onload = function() {
 
     // console.log(formObject)
     if (formObject.hp_ea == 'dschrute@dundermifflin.com') {
-      if (validateEmail(formObject.email_address)) {
+      if ((validateFields()) && (validateEmail(formObject.email_address))) {
         //console.log(formObject.email_address)
         
       
