@@ -435,14 +435,14 @@ function calculate(guid, isNew, prevData={}) {
   var savings_1_5yr = (( 5 ) * (parseInt(moveCost)) + ((annualRockCost * 5) - fodsCost));
   var savings_1_10yr = (( 10 ) * (parseInt(moveCost)) + ((annualRockCost * 10) - fodsCost));
   var savings_3_3yr = (( 9 ) * (parseInt(moveCost)) + ((annualRockCost * 3) - fodsCost));
-  var savings_3_5yr = (( 15 ) * (parseInt(moveCost)) + ((annualRockCost * 3) - fodsCost));
-  var savings_3_10yr = (( 30 ) * (parseInt(moveCost)) + ((annualRockCost * 3) - fodsCost));
+  var savings_3_5yr = (( 15 ) * (parseInt(moveCost)) + ((annualRockCost * 5) - fodsCost));
+  var savings_3_10yr = (( 30 ) * (parseInt(moveCost)) + ((annualRockCost * 10) - fodsCost));
   var savings_5_3yr = (( 15 ) * (parseInt(moveCost)) + ((annualRockCost * 3) - fodsCost));
-  var savings_5_5yr = (( 25 ) * (parseInt(moveCost)) + ((annualRockCost * 3) - fodsCost));
-  var savings_5_10yr = (( 50 ) * (parseInt(moveCost)) + ((annualRockCost * 3) - fodsCost));
+  var savings_5_5yr = (( 25 ) * (parseInt(moveCost)) + ((annualRockCost * 5) - fodsCost));
+  var savings_5_10yr = (( 50 ) * (parseInt(moveCost)) + ((annualRockCost * 10) - fodsCost));
   var savings_10_3yr = (( 30 ) * (parseInt(moveCost)) + ((annualRockCost * 3) - fodsCost));
-  var savings_10_5yr = (( 50 ) * (parseInt(moveCost)) + ((annualRockCost * 3) - fodsCost));
-  var savings_10_10yr = (( 100 ) * (parseInt(moveCost)) + ((annualRockCost * 3) - fodsCost));
+  var savings_10_5yr = (( 50 ) * (parseInt(moveCost)) + ((annualRockCost * 5) - fodsCost));
+  var savings_10_10yr = (( 100 ) * (parseInt(moveCost)) + ((annualRockCost * 10) - fodsCost));
 
 
 
