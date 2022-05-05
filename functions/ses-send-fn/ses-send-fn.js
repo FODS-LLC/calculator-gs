@@ -23,7 +23,7 @@ throw new Error('no region env var set');
     //   return {
     //     statusCode: 200,
     //     body: JSON.stringify(requestParams)
-
+    console.log("SES API: requestParams", requestParams)
     //let name = requestParams.name
     let name = "info@getfods.com"
     let roi = requestParams.roi

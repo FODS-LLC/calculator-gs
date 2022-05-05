@@ -230,6 +230,7 @@ window.onload = function() {
   clearButton.addEventListener('click', (event) => {
     event.preventDefault();
     localStorage.setItem('formString', '');
+    localStorage.setItem('lastCalculation', '');
     document.getElementById('sendBtn').classList.remove('hidden');
     hideEmailConfirm();
     clearForm();
@@ -413,19 +414,19 @@ function calculate(guid, isNew, prevData={}) {
     case '50':
       fodsCost = 15600;
       imageURL = '1x5T';
-      imageURL = 'img/1x4.jpg';
+      imageURL = 'img/1x5T.jpg';
       ReplacementLength = '70';
       break
     case '70':
       fodsCost = 15600;
       imageURL = '1x5T';
-      imageURL = 'img/1x4.jpg';
+      imageURL = 'img/1x5T.jpg';
       ReplacementLength = '70';
       break
     case '100':
       fodsCost = 20800; 
       imageURL = '1x7T';
-      imageURL = 'img/1x4.jpg';
+      imageURL = 'img/1x7T.jpg';
       ReplacementLength = '100';
       break
   }
@@ -530,7 +531,9 @@ function calculate(guid, isNew, prevData={}) {
 function sendEmail() {
   calcDataString = localStorage.getItem("lastCalculation");
   //console.log(calcDataString)
-  var data = JSON.parse(calcDataString)
+  var data = JSON.parse(calcDataString);
+  console.log("SES Call: data:", data);
+  console.log("SES Call: calDataString", calcDataString);
   fetch('/.netlify/functions/ses-send-fn', {
     method: 'POST',
     body: calcDataString
