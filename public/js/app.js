@@ -147,6 +147,7 @@ async function getPrev() {
 
 // Start Get Prev
 function loadPrev() {
+  document.getElementById('sendBtn').classList.add('hidden')
     // console.log('calling getPrev')
     getPrev().then((res) => {
       // console.log('calling calculate')
@@ -229,6 +230,7 @@ window.onload = function() {
   clearButton.addEventListener('click', (event) => {
     event.preventDefault();
     localStorage.setItem('formString', '');
+    document.getElementById('sendBtn').classList.remove('hidden');
     hideEmailConfirm();
     clearForm();
   });

@@ -53,9 +53,10 @@ exports.handler = async (event, context) => {
           const rows = await sheet.getRows(); // can pass in { limit, offset }
           const serializedRows = rows.map(serializeRow);
           return {
-            statusCode: 200,
+            statusCode: 301,
+            body: "Unauthorized."
             // body: JSON.stringify(rows) // dont do this - has circular references
-            body: JSON.stringify(serializedRows) // better
+            //body: JSON.stringify(serializedRows) // better
           };
         }
         /* GET /.netlify/functions/google-spreadsheet-fn/123456 */
@@ -74,9 +75,7 @@ exports.handler = async (event, context) => {
           } else {
             return {
               statusCode: 201,
-              body: JSON.stringify({
-                'Message': 'Previous Entry Not Found.'
-              })
+              body: 'Previous Entry Not Found.'
             }
           }
 
