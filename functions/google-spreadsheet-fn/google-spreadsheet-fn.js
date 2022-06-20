@@ -99,7 +99,7 @@ exports.handler = async (event, context) => {
         const data = JSON.parse(event.body);
         // console.log('`POST` invoked', data);
         data.Date = (new Date()).toLocaleString();
-        data.UserIP = event.headers['client-ip'];
+        data.UserIP = UserIP;
         endpoint="http://ip-api.com/json/";
         url=endpoint.concat(UserIP.toString());
         loc = await fetch("http://ip-api.com/json/")
