@@ -97,16 +97,20 @@ exports.handler = async (event, context) => {
       case 'POST':
         /* parse the string body into a useable JS object */
         const data = JSON.parse(event.body);
-        data.UserIP = UserIP;
         // console.log('`POST` invoked', data);
         data.Date = (new Date()).toLocaleString();
         data.UserIP = UserIP;
-        data.date = (new Date()).toLocaleString();
-        endpoint="http://ip-api.com/json/"
-        url=endpoint.concat(UserIP.toString())
+        endpoint="http://ip-api.com/json/";
+        url=endpoint.concat(UserIP.toString());
         loc = await fetch("http://ip-api.com/json/")
-        data.City = loc.City;
-        data.State = loc.State;
+            .then((res)=>res.json())
+            .then((res)=> {
+                return res
+                
+            });
+        data.City = loc.city;
+        data.State = loc.regionName;
+        console.log(data)
         // console.log({ addedRow });
         const addedRow = await sheet.addRow(data);
         return {
