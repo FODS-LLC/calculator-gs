@@ -1,3 +1,5 @@
+const fetch = require('node-fetch');
+
 /*
  * prerequisites
  */
@@ -98,10 +100,15 @@ exports.handler = async (event, context) => {
         data.UserIP = UserIP;
         // console.log('`POST` invoked', data);
         data.Date = (new Date()).toLocaleString();
-        const addedRow = await sheet.addRow(data);
-          data.UserIP = UserIP;
-          data.date = (new Date()).toLocaleString();
+        data.UserIP = UserIP;
+        data.date = (new Date()).toLocaleString();
+        endpoint="http://ip-api.com/json/"
+        url=endpoint.concat(UserIP.toString())
+        loc = await fetch("http://ip-api.com/json/")
+        data.City = loc.City;
+        data.State = loc.State;
         // console.log({ addedRow });
+        const addedRow = await sheet.addRow(data);
         return {
           statusCode: 200,
           body: JSON.stringify({

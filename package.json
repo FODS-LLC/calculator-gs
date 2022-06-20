@@ -12,6 +12,7 @@
     "google-spreadsheet": "^3.1.15",
     "googleapis": "^39.2.0",
     "netlify": "^6.1.27",
+    "node-fetch": "^2.6.7",
     "postcss": "^8.2.14",
     "postcss-import": "^14.0.1",
     "tailwindcss": "^2.1.2"
