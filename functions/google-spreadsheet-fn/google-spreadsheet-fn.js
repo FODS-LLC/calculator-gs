@@ -102,7 +102,7 @@ exports.handler = async (event, context) => {
         data.UserIP = UserIP;
         endpoint="http://ip-api.com/json/";
         url=endpoint.concat(UserIP.toString());
-        loc = await fetch("http://ip-api.com/json/")
+        loc = await fetch(url)
             .then((res)=>res.json())
             .then((res)=> {
                 return res
