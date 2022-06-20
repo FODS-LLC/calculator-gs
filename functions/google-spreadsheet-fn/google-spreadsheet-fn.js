@@ -198,7 +198,7 @@ exports.handler = async (event, context) => {
       default:
         return {
           statusCode: 500,
-          body: 'unrecognized HTTP Method, must be one of GET/POST/PUT/DELETE'
+          body: 'unrecognized HTTP Method, must be one of FOO/BAR'
         };
     }
   } catch (err) {
