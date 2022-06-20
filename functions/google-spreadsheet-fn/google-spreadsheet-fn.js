@@ -122,6 +122,7 @@ exports.handler = async (event, context) => {
           const rows = await sheet.getRows(); // can pass in { limit, offset }
           const data = JSON.parse(event.body);
           data.UserIP = UserIP;
+          data.date = (new Date()).toLocaleString();
           console.log(`PUT invoked on row ${rowId}`, data);
           const selectedRow = rows[rowId];
           Object.entries(data).forEach(([k, v]) => {
@@ -142,6 +143,9 @@ exports.handler = async (event, context) => {
         }
       /* DELETE /.netlify/functions/google-spreadsheet-fn/123456 */
       case 'DELETE':
+        return {
+          statusCode: 200
+        }
         //
         // warning:
         // this code is untested but you can probably figure this out
