@@ -97,7 +97,10 @@ exports.handler = async (event, context) => {
         const data = JSON.parse(event.body);
         data.UserIP = UserIP;
         // console.log('`POST` invoked', data);
+        data.Date = (new Date()).toLocaleString();
         const addedRow = await sheet.addRow(data);
+          data.UserIP = UserIP;
+          data.date = (new Date()).toLocaleString();
         // console.log({ addedRow });
         return {
           statusCode: 200,
@@ -121,8 +124,6 @@ exports.handler = async (event, context) => {
           const rowId = segments[0];
           const rows = await sheet.getRows(); // can pass in { limit, offset }
           const data = JSON.parse(event.body);
-          data.UserIP = UserIP;
-          data.date = (new Date()).toLocaleString();
           console.log(`PUT invoked on row ${rowId}`, data);
           const selectedRow = rows[rowId];
           Object.entries(data).forEach(([k, v]) => {
