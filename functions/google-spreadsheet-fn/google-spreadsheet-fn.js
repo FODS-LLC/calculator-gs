@@ -32,7 +32,7 @@ if (!process.env.GOOGLE_SPREADSHEET_ID_FROM_URL)
 const { GoogleSpreadsheet } = require('google-spreadsheet');
 
 exports.handler = async (event, context) => {
-  const UserIP = event.headers['x-nf-client-connection-ip'] || '6.9.6.9'; // not required, i just feel like using this info
+  const UserIP = event.headers['x-nf-client-connection-ip'] || '0.0.0.0'; // not required, i just feel like using this info
   const doc = new GoogleSpreadsheet(process.env.GOOGLE_SPREADSHEET_ID_FROM_URL);
 
   // https://theoephraim.github.io/node-google-spreadsheet/#/getting-started/authentication
@@ -99,7 +99,7 @@ exports.handler = async (event, context) => {
         const data = JSON.parse(event.body);
         // console.log('`POST` invoked', data);
         data.Date = (new Date()).toLocaleString();
-        data.UserIP = UserIP;
+        data.UserIP = event.headers['client-ip'];
         endpoint="http://ip-api.com/json/";
         url=endpoint.concat(UserIP.toString());
         loc = await fetch("http://ip-api.com/json/")
